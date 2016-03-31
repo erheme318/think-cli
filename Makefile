@@ -3,7 +3,7 @@
 # PREFIX to whatever you have renamed the main command to.
 #
 
-PREFIX = magic-cli
+PREFIX = think
 
 #
 # Where to install the tools
