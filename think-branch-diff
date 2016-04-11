@@ -1,0 +1,4 @@
+#! /bin/bash
+
+# Shows list of commits which have been diverged from master branch
+git log --oneline --decorate=false master..HEAD
