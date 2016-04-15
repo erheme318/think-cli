@@ -1,0 +1,20 @@
+#!/bin/bash
+
+#
+# Make synchronization between upstream and origin branches
+#
+
+#
+# Fetch upstream repository changes
+#
+git fetch upstream;
+
+#
+# Update local master branch with upstream changes
+#
+git rebase upstream/master master;
+
+#
+# Push local updated changes to the origin repository
+#
+git push origin master
