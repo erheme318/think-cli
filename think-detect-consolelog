@@ -1,0 +1,11 @@
+#! /bin/bash
+
+# A command to remove line that contains console.log
+
+set -e
+
+# Execute a command for staged *.js files only
+for i in $(git diff --name-only --cached | grep .js)
+do
+    sed -i "/console.log/d" $i
+done
