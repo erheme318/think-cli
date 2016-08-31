@@ -1,0 +1,10 @@
+#! /bin/bash
+
+# A command to prepare development environment when my machine is rebooted.
+# It can be hooked when X server starts
+
+# jump to the development directory
+cd /home/development/sfprojects/back-web
+
+# Prepare docker containers
+docker-compose up -d
