@@ -1,0 +1,13 @@
+#! /bin/bash
+
+# Define coding standard configuration file
+config_file=/var/www/build/cs.php
+
+# A command for fixing coding standard
+command="docker run --rm -l env=jenkins -l app=back -l subapp=cs -l type=pr -v $PWD:/var/www -t registry.lrqdo.fr/tools/php-cs-fixer:20160216 fix --diff --config-file=${config_file}"
+
+# Execute a command for each changed files only
+for i in $(git diff --name-only --cached | grep .php)
+do
+    ${command} $i
+done
